@@ -1,0 +1,196 @@
+Breed,Breed Group ,Affectionate With Family,Good With Young Children,Good With Other Dogs,Shedding Level,Coat Grooming Frequency,Drooling Level,Coat Type,Coat Length,Openness To Strangers,Playfulness Level,Watchdog/Protective Nature,Adaptability Level,Trainability Level,Energy Level,Barking Level,Mental Stimulation Needs
+Retrievers (Labrador),Sporting,5,5,5,4,2,2,Double,Short,5,5,3,5,5,5,3,4
+French Bulldogs,Non-sporting,5,5,4,3,1,3,Smooth,Short,5,5,3,5,4,3,1,3
+German Shepherd Dogs,Herding ,5,5,3,4,2,2,Double,Medium,3,4,5,5,5,5,3,5
+Retrievers (Golden),Sporting,5,5,5,4,2,2,Double,Medium,5,4,3,5,5,3,1,4
+Bulldogs,Non-sporting,4,3,3,3,3,3,Smooth,Short,4,4,3,3,4,3,2,3
+Poodles,Non-sporting,5,5,3,1,4,1,Curly,Long,5,5,5,4,5,4,4,5
+Beagles,Hound ,3,5,5,3,2,1,Smooth,Short,3,4,2,4,3,4,4,4
+Rottweilers,Working,5,3,3,3,1,3,Smooth,Short,3,4,5,4,5,3,1,5
+Pointers (German Shorthaired),Sporting,5,5,4,3,2,2,Smooth,Short,4,4,4,4,5,5,3,5
+Dachshunds,Hound ,5,3,4,2,2,2,Smooth,Short,4,4,4,4,4,3,5,3
+Pembroke Welsh Corgis,Herding ,5,3,4,4,2,1,Double,Short,4,4,5,4,4,4,4,4
+Australian Shepherds,Herding ,3,5,3,3,2,1,Double,Medium,3,4,3,3,5,5,3,5
+Yorkshire Terriers,Toy,5,5,3,1,5,1,Silky,Long,5,4,5,5,4,4,4,4
+Boxers,Working,4,5,3,2,2,3,Smooth,Short,4,4,4,3,4,4,3,4
+Great Danes,Working,5,3,3,3,1,4,Smooth,Short,3,4,5,4,3,4,3,4
+Siberian Huskies,Working,5,5,5,4,2,1,Double,Medium,5,5,1,4,3,5,5,4
+Cavalier King Charles Spaniels,Toy ,5,5,5,2,2,2,Wavy,Medium,4,3,3,3,4,3,3,3
+Doberman Pinschers,Working,5,5,3,4,1,2,Smooth,Short,4,4,5,4,5,5,3,4
+Miniature Schnauzers,Terrier,5,5,3,3,4,2,Wiry,Medium,3,4,4,5,5,3,5,4
+Shih Tzu,Toy,5,5,5,1,4,1,Double,Long,3,3,3,5,4,3,3,3
+Boston Terriers,Non-sporting,5,5,4,2,2,1,Smooth,Short,5,5,3,3,4,4,2,3
+Bernese Mountain Dogs,Working ,5,5,5,5,3,3,Double,Medium,4,4,3,4,4,4,3,3
+Pomeranians,Toy,5,3,3,2,3,1,Double,Long,3,3,4,4,3,3,4,3
+Havanese,Toy,5,5,5,2,3,1,Double,Long,5,5,3,5,4,3,4,3
+Cane Corso,Working,4,3,3,2,1,3,Smooth,Short,3,3,5,3,4,4,3,3
+Spaniels (English Springer),Sporting,5,3,4,3,2,3,Double,Medium,4,4,3,4,5,4,3,4
+Shetland Sheepdogs,Herding ,5,5,5,3,3,1,Double,Long,2,5,5,5,5,4,5,4
+Brittanys,Sporting,3,4,4,3,3,1,Double,Short,3,4,3,3,5,5,3,4
+Pugs,Toy,5,5,4,4,2,1,Smooth,Short,5,5,3,5,4,3,1,3
+Spaniels (Cocker),Sporting,4,5,5,3,4,2,Double,Long,4,3,3,4,4,4,3,3
+Miniature American Shepherds,Herding ,5,5,5,3,3,2,Double,Medium,3,4,3,4,5,5,3,5
+Border Collies,Herding ,5,3,3,3,3,1,Double,Medium,4,5,3,5,5,5,4,5
+Mastiffs,Working,5,5,3,3,1,4,Double,Short,3,3,5,4,3,3,1,3
+Chihuahuas,Toy,4,1,3,2,1,1,Smooth,Short,2,4,4,4,3,4,5,3
+Vizslas,Sporting,5,5,4,3,2,2,Smooth,Short,4,5,3,5,5,5,3,5
+Basset Hounds,Hound ,3,5,5,2,3,4,Smooth,Short,3,3,3,3,3,2,4,3
+Belgian Malinois,Herding ,3,3,3,3,2,1,Smooth,Short,3,3,4,3,5,4,3,4
+Maltese,Toy,5,3,3,1,4,1,Silky,Long,3,3,4,4,3,3,3,3
+Weimaraners,Sporting,5,5,3,3,2,2,Smooth,Short,3,5,5,4,5,5,3,5
+Collies,Herding ,4,5,3,3,3,2,Smooth,Short,3,4,3,4,4,3,5,3
+Newfoundlands,Working,5,5,5,3,2,5,Double,Medium,5,3,5,4,3,3,1,3
+Rhodesian Ridgebacks,Hound,5,5,3,3,2,2,Smooth,Short,3,3,5,4,4,3,2,4
+Shiba Inu,Non-sporting,5,3,3,3,2,1,Double,Short,3,3,5,3,2,3,3,4
+West Highland White Terriers,Terrier,5,5,3,3,3,1,Double,Medium,4,5,5,4,3,4,5,4
+Bichons Frises,Non-sporting,5,5,5,1,5,1,Double,Long,5,4,2,4,4,4,3,3
+Bloodhounds,Hound ,4,3,3,3,2,5,Smooth,Short,3,3,2,3,4,3,5,3
+Spaniels (English Cocker),Sporting,5,5,5,3,3,2,Double,Medium,4,3,3,4,4,3,3,4
+Akitas,Working ,3,3,1,3,3,1,Double,Medium,2,3,5,3,3,4,2,3
+Portuguese Water Dogs,Working,5,5,4,2,4,2,Curly,Long,4,5,4,5,5,5,3,5
+Retrievers (Chesapeake Bay),Sporting,4,3,3,3,3,2,Wiry,Medium,3,3,4,4,5,4,3,4
+Dalmatians,Non-sporting,5,3,3,4,2,2,Smooth,Short,4,4,4,4,4,4,3,4
+St. Bernards,Working,5,5,3,3,2,5,Smooth,Short,3,3,5,4,3,3,1,3
+Papillons,Toy,5,5,3,3,2,1,Silky,Medium,5,5,4,5,5,4,5,5
+Australian Cattle Dogs,Herding ,3,3,3,3,1,1,Smooth,Short,3,3,4,3,4,5,1,4
+Bullmastiffs,Working,4,3,3,3,1,3,Smooth,Short,3,3,5,3,4,4,1,4
+Samoyeds,Working,5,5,3,3,3,1,Double,Long,5,5,4,4,4,4,5,4
+Scottish Terriers,Terrier,5,3,2,2,3,2,Wiry,Medium,3,4,5,4,3,3,4,4
+Soft Coated Wheaten Terriers,Terrier,5,5,3,1,4,2,Wavy,Medium,3,3,3,3,3,4,3,3
+Whippets,Hound,5,5,5,2,1,1,Smooth,Short,3,4,3,3,3,4,1,4
+Pointers (German Wirehaired),Sporting,5,3,3,2,2,2,Wiry,Medium,4,4,3,4,5,5,3,4
+Chinese Shar-Pei,Non-sporting,4,3,3,3,1,3,Smooth,Short,3,3,4,4,3,3,3,3
+Airedale Terriers,Terrier ,3,3,3,1,3,1,Wiry,Short,3,3,5,3,3,3,3,3
+Wirehaired Pointing Griffons,Sporting,5,5,3,3,2,3,Wiry,Medium,5,4,3,4,5,5,3,5
+Bull Terriers,Terrier,4,3,1,3,2,1,Smooth,Short,4,4,3,3,3,4,3,4
+Alaskan Malamutes,Working,3,3,3,3,3,1,Double,Medium,3,3,4,3,5,4,3,3
+Cardigan Welsh Corgis,Herding ,4,4,3,3,2,1,Double,Medium,4,4,3,3,4,4,5,4
+Giant Schnauzers,Working,5,3,3,3,4,2,Wiry,Medium,3,4,5,4,5,5,3,4
+Old English Sheepdogs,Herding ,5,5,3,3,4,3,Double,Long,3,4,4,4,4,3,3,4
+Italian Greyhounds,Toy ,5,3,5,3,1,1,Smooth,Short,5,4,3,4,4,3,3,3
+Great Pyrenees,Working,5,3,3,3,2,3,Double,Medium,3,3,5,3,3,3,3,3
+Dogues de Bordeaux,Working,5,3,3,4,1,5,Smooth,Short,3,3,5,4,4,3,3,4
+Russell Terriers,Terrier,5,3,5,3,2,1,Wiry,Short,5,5,4,4,3,5,4,5
+Cairn Terriers,Terrier,4,3,3,2,2,1,Wiry,Medium,3,4,4,3,3,3,4,3
+Irish Wolfhounds,Hound ,5,3,4,3,2,2,Wiry,Medium,3,3,5,3,3,3,1,3
+Setters (Irish),Sporting,5,5,5,3,3,2,Silky,Medium,5,5,3,4,4,5,3,4
+Greater Swiss Mountain Dogs,Working,5,5,3,3,2,3,Smooth,Short,5,4,4,3,4,4,3,4
+Miniature Pinschers,Toy,5,3,4,3,1,1,Smooth,Short,3,4,5,4,3,5,5,5
+Lhasa Apsos,Non-sporting,5,3,3,1,3,1,Silky,Long,3,3,5,5,3,3,3,3
+Chinese Crested,Toy,4,3,3,1,2,1,Hairless,Short,4,3,3,4,4,3,3,3
+Coton de Tulear,Non-sporting,5,5,5,2,4,1,Double,Long,5,4,3,4,4,3,1,3
+Staffordshire Bull Terriers,Terrier,5,5,3,2,2,3,Smooth,Short,4,4,5,5,5,4,3,4
+American Staffordshire Terriers,Terrier ,5,3,3,2,1,1,Smooth,Short,4,3,5,3,3,3,3,3
+Rat Terriers,Terrier,5,5,3,3,2,1,Smooth,Short,5,5,4,4,5,4,3,5
+Chow Chows,Non-sporting,4,3,2,3,3,3,Smooth,Medium,2,3,5,3,3,3,1,3
+Anatolian Shepherd Dogs,Working ,1,3,3,3,2,1,Smooth,Short,1,3,5,3,2,3,3,3
+Basenjis,Hound ,3,3,3,2,1,1,Smooth,Short,3,3,3,3,2,4,1,4
+Spaniels (Boykin),Sporting,3,5,5,3,3,1,Double,Medium,3,4,3,4,4,4,3,3
+Lagotti Romagnoli,Sporting,5,3,5,1,2,2,Double,Medium,4,4,3,4,4,4,2,4
+Brussels Griffons,Toy ,4,3,3,3,3,1,Wiry,Short,4,4,3,4,4,3,4,3
+Retrievers (Nova Scotia Duck Tolling),Sporting,5,5,4,3,2,2,Double,Medium,3,5,3,4,5,5,2,4
+Norwegian Elkhounds,Hound ,5,3,3,3,2,2,Double,Medium,4,4,5,4,4,4,4,4
+Standard Schnauzers,Working,5,5,3,1,3,3,Wiry,Medium,3,4,5,4,5,3,3,5
+Dogo Argentinos,Working ,5,3,3,4,1,3,Smooth,Short,4,4,5,4,5,5,3,4
+Bouviers des Flandres,Herding ,3,3,3,3,4,2,Rough,Medium,3,3,4,3,4,4,3,3
+Pekingese,Toy,5,3,3,3,3,1,Double,Long,3,4,4,4,3,3,1,3
+Keeshonden,Non-sporting,5,5,5,3,3,2,Double,Long,5,5,5,5,5,4,4,4
+Border Terriers,Terrier,4,5,3,2,2,1,Wiry,Short,4,4,3,4,4,3,3,3
+Leonbergers,Working,5,5,3,4,4,3,Double,Long,5,3,4,4,5,3,3,4
+Tibetan Terriers,Non-sporting,5,3,3,3,3,2,Double,Long,3,3,4,4,3,4,3,4
+Neapolitan Mastiffs,Working,3,3,3,3,2,5,Smooth,Short,3,2,5,3,3,2,1,3
+Setters (English),Sporting,5,4,4,3,3,3,Double,Medium,4,4,3,4,4,3,3,4
+Retrievers (Flat-Coated),Sporting ,5,5,5,3,2,2,Smooth,Medium,5,5,3,5,5,5,3,4
+Borzois,Hound ,3,3,3,3,2,1,Curly,Medium,3,3,3,3,2,4,2,4
+Fox Terriers (Wire),Terrier,5,5,3,2,3,2,Wiry,Medium,5,4,4,4,4,4,4,4
+Miniature Bull Terriers,Terrier,5,3,3,2,1,2,Smooth,Short,3,4,4,4,3,4,5,4
+Belgian Tervuren,Herding ,3,3,3,3,2,1,Double,Medium,3,3,4,3,5,4,3,4
+Setters (Gordon),Sporting,5,3,3,3,2,4,Double,Medium,3,3,4,4,5,5,3,4
+Silky Terriers,Toy,5,3,3,2,3,1,Silky,Long,4,4,5,4,4,3,4,3
+Norwich Terriers,Terrier,5,5,3,3,2,1,Wiry,Short,5,4,4,4,3,4,4,4
+Spinoni Italiani,Sporting,5,3,4,3,2,3,Wiry,Medium,3,3,3,3,4,3,2,3
+Japanese Chin,Toy,5,3,5,3,2,1,Silky,Medium,3,3,3,4,3,3,2,3
+Welsh Terriers,Terrier,5,5,3,2,3,2,Wiry,Medium,5,4,4,4,4,4,4,4
+Toy Fox Terriers,Toy,5,3,3,3,2,1,Smooth,Short,5,4,5,4,5,4,4,4
+Schipperkes,Non-sporting,5,3,3,3,2,1,Double,Short,3,4,5,4,4,3,4,3
+Parson Russell Terriers,Terrier,5,3,5,2,2,1,Smooth,Short,3,4,3,4,4,5,3,4
+Pointers,Sporting,5,3,5,3,2,2,Smooth,Short,4,4,3,4,5,4,3,4
+Belgian Sheepdogs,Herding ,3,3,3,3,2,1,Double,Medium,3,3,4,3,5,4,3,4
+Tibetan Spaniels,Non-sporting,5,5,3,3,2,2,Double,Medium,4,4,4,4,3,3,3,3
+American Eskimo Dogs,Non-sporting,5,5,3,3,3,1,Double,Medium,5,3,3,4,4,4,3,3
+Irish Terriers,Terrier,5,5,1,2,1,1,Wiry,Medium,3,3,5,4,3,3,3,4
+Beaucerons,Herding ,3,3,3,4,3,1,Smooth,Short,2,3,4,3,3,5,3,3
+Afghan Hounds,Hound ,3,3,3,1,4,1,Silky,Long,3,3,3,3,1,4,3,3
+Boerboels,Working,5,4,2,3,2,3,Smooth,Short,3,3,5,3,4,3,3,4
+Fox Terriers (Smooth),Terrier,5,3,3,3,2,1,Smooth,Short,3,4,5,4,3,4,5,3
+Bearded Collies,Herding ,4,5,5,3,4,1,Silky,Long,4,4,3,4,3,4,5,3
+Black Russian Terriers,Terrier,3,3,3,3,4,3,Double,Medium,2,3,5,4,4,4,3,4
+Black and Tan Coonhounds,Hound ,4,5,5,3,2,3,Smooth,Short,3,3,2,4,3,3,4,3
+Spaniels (Welsh Springer),Sporting,5,5,4,3,2,2,Double,Medium,1,3,3,4,5,4,3,4
+American Hairless Terriers,Terrier,5,5,3,1,1,1,Hairless,Short,3,3,3,5,5,3,3,3
+Norfolk Terriers,Terrier,5,5,3,3,2,1,Wiry,Short,5,4,4,4,3,4,4,4
+Xoloitzcuintli,Non-sporting,5,3,3,1,1,1,Hairless,Short,3,4,3,4,4,4,3,4
+Manchester Terriers,Terrier,5,4,3,2,2,1,Smooth,Short,3,4,4,4,4,4,4,3
+Kerry Blue Terriers,Terrier,5,4,2,1,3,2,Wavy,Medium,3,3,5,3,3,4,4,4
+Australian Terriers,Terrier ,3,5,3,1,2,1,Wiry,Short,3,4,4,3,4,4,5,4
+Spaniels (Clumber),Sporting,4,3,3,3,2,4,Wavy,Medium,4,3,3,4,4,3,1,3
+Lakeland Terriers,Terrier,5,3,3,2,2,1,Wiry,Short,3,4,3,4,3,3,3,4
+Bluetick Coonhounds,Hound ,3,3,5,3,2,2,Smooth,Short,3,3,2,3,4,4,4,3
+English Toy Spaniels,Toy,5,5,5,3,3,2,Double,Medium,3,4,3,4,3,3,2,3
+German Pinschers,Working,5,3,3,3,1,1,Smooth,Short,3,4,4,3,5,5,3,4
+Tibetan Mastiffs,Working,4,3,3,4,3,3,Double,Medium,1,3,5,3,3,3,3,4
+Bedlington Terriers,Terrier,3,3,3,1,3,1,Curly,Medium,3,3,4,3,3,4,3,3
+Greyhounds,Hound ,4,3,4,2,1,1,Smooth,Short,3,3,3,4,3,4,3,3
+Pulik,Herding,5,3,3,1,5,2,Corded,Long,3,3,5,4,5,3,3,5
+Salukis,Hound,5,3,3,2,1,1,Smooth,Short,3,3,1,3,3,4,3,5
+Barbets,Sporting,4,5,5,1,3,1,Curly,Medium,3,3,3,3,4,3,3,3
+Redbone Coonhounds,Hound,5,5,5,3,2,3,Smooth,Short,3,3,3,4,3,3,4,4
+Swedish Vallhunds,Herding ,5,5,3,4,2,2,Double,Short,3,4,3,4,4,4,3,4
+Sealyham Terriers,Terrier,5,3,3,3,3,1,Wiry,Medium,4,3,5,4,4,3,4,4
+Spanish Water Dogs,Herding ,5,4,3,1,4,2,Corded,Medium,3,4,3,3,4,4,3,5
+Briards,Herding ,3,3,3,1,4,2,Double,Long,3,3,4,3,3,3,1,3
+Berger Picards,Herding ,3,3,3,3,1,1,Wiry,Medium,3,3,4,3,4,4,2,4
+Entlebucher Mountain Dogs,Herding ,5,3,5,3,1,2,Smooth,Short,3,3,5,4,3,5,3,4
+Treeing Walker Coonhounds,Hound,5,5,5,3,1,3,Smooth,Short,3,4,3,4,5,5,4,5
+Icelandic Sheepdogs,Herding ,5,5,4,3,2,2,Double,Medium,3,3,4,4,5,4,4,5
+Wirehaired Vizslas,Sporting,5,5,3,3,1,2,Wiry,Short,5,5,3,4,5,5,3,5
+Pumik,Herding ,5,3,3,1,2,2,Curly,Medium,3,4,4,4,5,5,3,5
+Portuguese Podengo Pequenos,Hound,5,5,5,3,2,1,Wiry,Medium,3,4,3,4,3,4,3,4
+Spaniels (American Water),Sporting,3,3,3,1,3,1,Double,Medium,3,3,3,3,5,3,3,3
+Retrievers (Curly-Coated),Sporting,5,5,3,2,1,1,Double,Short,3,4,4,4,4,4,3,3
+Spaniels (Field),Sporting,5,5,4,3,2,2,Smooth,Medium,4,3,3,4,5,3,3,3
+Lowchen,Non-sporting,5,5,3,2,2,1,Wavy,Long,3,4,4,4,4,3,3,3
+Nederlandse Kooikerhondjes,Sporting,5,3,3,3,2,2,Double,Medium,4,3,3,4,5,4,3,4
+Affenpinschers,Toy ,3,3,3,3,3,1,Wiry,Short,5,3,3,4,3,3,3,3
+Petits Bassets Griffons Vendeens,Hound,4,5,5,2,2,2,Rough,Long,4,4,4,4,3,4,5,4
+Finnish Lapphunds,Herding ,5,4,3,4,2,2,Double,Medium,4,3,3,4,4,3,5,3
+Scottish Deerhounds,Hound,5,3,5,3,1,1,Wiry,Medium,3,3,3,3,3,3,1,3
+Plott Hounds,Hound,0,0,0,0,0,0,Plott Hounds,Plott Hounds,0,0,0,0,0,0,0,0
+Norwegian Buhunds,Herding ,5,3,3,3,2,1,Double,Medium,3,3,4,4,3,4,4,4
+Glen of Imaal Terriers,Terrier,5,3,3,2,3,2,Wiry,Medium,3,3,3,4,3,3,2,3
+Setters (Irish Red and White),Sporting,5,5,5,2,2,2,Double,Medium,5,3,3,5,5,5,3,3
+Ibizan Hounds,Hound ,5,3,5,2,1,1,Wiry,Short,3,4,3,4,3,5,3,5
+Spaniels (Sussex),Sporting,5,3,3,3,3,3,Double,Medium,3,4,3,4,4,3,3,3
+Bergamasco Sheepdogs,Herding ,3,3,3,1,1,2,Corded,Long,3,3,4,3,3,3,1,3
+Spaniels (Irish Water),Sporting ,5,3,3,1,3,2,Curly,Medium,3,5,3,4,5,3,1,4
+Polish Lowland Sheepdogs,Herding ,5,3,3,2,4,2,Double,Long,3,4,5,5,4,3,4,4
+Otterhounds,Hound,5,3,3,2,2,3,Rough,Medium,4,3,3,4,4,3,5,3
+Kuvaszok,Working,5,3,3,3,2,2,Double,Medium,3,3,5,4,5,3,3,3
+Komondorok,Working,5,3,2,1,4,2,Corded,Long,3,3,5,3,4,3,3,3
+Cirnechi dell’Etna,Hound,4,3,4,1,1,1,Smooth,Short,3,4,3,4,4,3,2,3
+Pharaoh Hounds,Hound,5,3,5,3,2,1,Smooth,Short,3,3,3,3,4,4,3,4
+Dandie Dinmont Terriers,Terrier,4,3,3,2,3,1,Double,Medium,4,3,4,3,4,3,3,3
+Pyrenean Shepherds,Herding ,5,3,3,3,2,2,Smooth,Medium,3,5,5,4,5,5,4,5
+Skye Terriers,Terrier,5,3,3,3,3,1,Double,Long,3,3,3,3,3,3,3,3
+Canaan Dogs,Herding ,3,3,3,4,2,1,Smooth,Short,3,3,4,3,4,3,5,3
+American English Coonhounds,Hound ,3,3,5,2,1,1,Smooth,Short,3,3,3,3,3,4,4,3
+Chinooks,Working,4,5,5,3,3,1,Smooth,Medium,3,3,4,4,4,3,5,3
+Finnish Spitz,Non-sporting,5,5,4,3,2,2,Double,Medium,3,3,3,4,3,5,5,4
+Grand Basset Griffon Vendeens,Hound ,5,3,4,3,2,2,Wiry,Medium,5,4,3,4,3,5,4,4
+Sloughis,Hound,4,3,3,3,1,1,Smooth,Short,2,3,2,3,3,4,2,3
+Harriers,Hound ,5,5,5,3,1,2,Double,Short,4,4,3,4,4,4,5,4
+Cesky Terriers,Terrier,4,5,3,2,2,1,Wavy,Medium,4,3,3,4,3,3,3,3
+American Foxhounds,Hound ,3,5,5,3,1,1,Smooth,Short,3,3,3,3,3,4,5,3
+Azawakhs,Hound ,3,3,3,2,2,1,Smooth,Short,1,3,3,3,2,3,1,3
+English Foxhounds,Hound ,5,5,5,3,1,2,Double,Short,4,4,3,4,4,4,5,4
+Norwegian Lundehunds, Non-sporting,3,3,3,3,2,1,Double,Short,3,3,3,3,3,3,3,3
