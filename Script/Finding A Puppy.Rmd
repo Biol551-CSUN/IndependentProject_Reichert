@@ -1,0 +1,188 @@
+---
+title: "Independent Project"
+author: "Leah Reichert"
+date: "'r Sys. Date()'"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      fig.path = "../Output/")
+```
+
+## The Purpose of This Independent Project 
+- To help my friend narrow down what dog breed to get.
+
+Character Traits 
+
+Breed Groups 
+
+
+## Load the Libraries ## 
+```{r}
+library(plotly)
+library(here)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(magick)
+library(reticulate)
+
+```
+
+## Read in the Data ## 
+```{r}
+Breed_Traits_ <- read_csv(here("Data","Breed Traits .csv")) # Load first data set
+
+View(Breed_Traits_)
+
+
+AKC_Breed_Info <- read_csv(here("Data","AKC Breed Info.csv")) # Load second data set 
+
+View(AKC_Breed_Info)
+
+
+```
+
+## Pivot Data Long ## 
+```{r}
+long <- Breed_Traits_ %>%
+ pivot_longer(cols = c(`Affectionate With Family`,`Good With Young Children`, `Good With Other Dogs`, `Shedding Level`, `Coat Grooming Frequency`, `Drooling Level`, `Openness To Strangers`, `Playfulness Level`, `Watchdog/Protective Nature`, `Adaptability Level`, `Trainability Level`, `Energy Level`, `Barking Level`, `Mental Stimulation Needs`),
+              names_to = 'Traits',
+              values_to = 'Values') 
+View(long)
+```
+
+## Create Bar Plot: Character traits measured by Breed Group ## 
+```{r}
+
+Traits_long <- long %>%
+  plot_ly(x = ~ `Breed Group`,
+          y = ~ Values,
+          color = ~ Traits,
+          type = "bar",
+          marker = list(color = rainbow(nrow(long)))) %>%
+  layout(title = 'Breed vs. Weight',
+       plot_bgcolor = "white",
+       xaxis = list(title = 'Breed Group',
+                    tickangle = -45),
+       yaxis = list(title = 'Rank'),
+       legend = list(title = list(text = '<b> Traits </b>',
+                                  xanchor = 'center',
+                                  yanchor = 'top')))
+
+
+
+Traits_long
+
+
+
+```
+
+
+## Filter Data To Visualize Coat Length ##
+```{r}
+coat_filtered <- Breed_Traits_ %>%
+  filter(`Breed Group` %in% c("Hound","Sporting")) %>%
+  filter(`Coat Type` %in% c("Smooth","Double"))%>%
+  filter(Breed %in% c("Black and Tan Coonhounds","English Foxhounds","Pointers (German Shorthaired)","Greyhounds","Retrievers (Labrador)","Pharaoh Hounds","Redbone Coonhounds","Rhodesian Ridgebacks","Vizslas"))
+  
+  
+View(coat_filtered)
+```
+
+## Scatter Plot: Coat Type for Certain Breeds ##
+```{r fig.width=15}
+coat <- coat_filtered  %>%
+plot_ly(x = ~ Breed,
+          y = ~ `Coat Type`,
+          type = "scatter",
+        mode = "markers",
+        color = ~ Breed,
+        colors = "Set1"
+
+)
+          
+ coat
+ 
+
+```
+
+## Filter Data To Visualize Weight ##
+```{r}
+weight_f <- AKC_Breed_Info %>%
+  drop_na() %>%
+  filter(Breed %in% c("Whippet","Vizsla","Rhodesian Ridgeback","Labrador Retriever","German Shorthaired Pointer","Pharaoh Hound","Harrier","English Foxhound","Black And Tan Coonhound","Basset Hound","Beagle","Dachshund","Brittany","Weimarener","Bloodhound","Whippet","Basenji","Pointer","Greyhound","Redbone Coonhound")) %>%
+  filter(weight_low_lbs >= 45) %>%
+  filter(weight_high_lbs <= 100)
+  
+  
+
+View(weight_f)
+```
+
+## Scatter Plot: Weight for Certain Breeds ##
+```{r}
+weight <- weight_f %>%
+  plot_ly(x = ~ weight_low_lbs,
+          y = ~weight_high_lbs,
+          type = "scatter",
+          mode = "markers",
+          color = ~Breed,
+          colors = "Spectral") %>%
+layout(title = 'Breed vs. Weight',
+       plot_bgcolor = "#bababa",
+       xaxis = list(title = 'Low Weight (lbs)'),
+       yaxis = list(title = 'High Weight (lbs)'),
+       legend = list(title = list(text = '<b> Breeds </b>')))
+
+weight
+
+
+```
+
+
+## Filter Data For Adaptability and Trainability ##
+
+```{r}
+trait_filter <- long %>%
+  filter(Breed %in% c("Black and Tan Coonhounds","English Foxhounds","Pointers (German Shorthaired)","Greyhounds","Retrievers (Labrador)","Pharaoh Hounds","Redbone Coonhounds","Rhodesian Ridgebacks","Vizslas")) %>%
+  filter(Traits %in% c("Trainability Level","Adaptability Level"))
+
+View(trait_filter)
+
+```
+
+## Bar Plot: Final Filtered Breeds by Adaptability and Trainability ##
+```{r}
+final <- trait_filter %>%
+  plot_ly(x = ~ Traits,
+          y = ~Values,
+          type = "bar",
+          mode = "markers",
+          color = ~Breed)
+
+final
+
+
+```
+
+## Image of The Winner ##
+```{r, Winner}
+Vizsla <- image_read("https://images.ctfassets.net/m5ehn3s5t7ec/wp-image-198422/0e0fe308ed17ab3af5f3c8f2db288667/Vizsla-Dog-Breed-Information.jpg")
+
+Vizsla
+
+
+```
+
+
+
+
+
+
+
+
+
