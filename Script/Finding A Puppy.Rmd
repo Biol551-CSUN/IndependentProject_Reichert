@@ -28,7 +28,6 @@ library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(magick)
-library(reticulate)
 
 ```
 
@@ -64,12 +63,17 @@ Traits_long <- long %>%
           color = ~ Traits,
           type = "bar",
           marker = list(color = rainbow(nrow(long)))) %>%
-  layout(title = 'Breed vs. Weight',
+  layout(title = 'Breed vs. Traits',
+         font = list(color = "darkorchid"),
        plot_bgcolor = "white",
+       paper_bgcolor = "lavender",
        xaxis = list(title = 'Breed Group',
-                    tickangle = -45),
-       yaxis = list(title = 'Rank'),
+                    tickangle = -45,
+                    color = "darkorchid"),
+       yaxis = list(title = 'Rank',
+                    color = "darkorchid"),
        legend = list(title = list(text = '<b> Traits </b>',
+                                  font = list(color = "darkorchid"),
                                   xanchor = 'center',
                                   yanchor = 'top')))
 
@@ -85,9 +89,10 @@ Traits_long
 ## Filter Data To Visualize Coat Length ##
 ```{r}
 coat_filtered <- Breed_Traits_ %>%
+  filter(Breed %in% c("Black and Tan Coonhounds ")) %>%
   filter(`Breed Group` %in% c("Hound","Sporting")) %>%
-  filter(`Coat Type` %in% c("Smooth","Double"))%>%
-  filter(Breed %in% c("Black and Tan Coonhounds","English Foxhounds","Pointers (German Shorthaired)","Greyhounds","Retrievers (Labrador)","Pharaoh Hounds","Redbone Coonhounds","Rhodesian Ridgebacks","Vizslas"))
+  filter(`Coat Type` %in% c("Smooth","Double")) 
+  
   
   
 View(coat_filtered)
@@ -101,9 +106,22 @@ plot_ly(x = ~ Breed,
           type = "scatter",
         mode = "markers",
         color = ~ Breed,
-        colors = "Set1"
-
-)
+        colors = "Paired",
+        size = 20,
+        alpha = 0.5) %>%
+layout(title = 'Breed vs. Coat',
+         font = list(color = "navy"),
+       plot_bgcolor = "white",
+       paper_bgcolor = "lightcyan",
+       xaxis = list(title = 'Breed Group',
+                    tickangle = -45,
+                    color = "navy"),
+       yaxis = list(title = 'Rank',
+                    color = "navy"),
+       legend = list(title = list(text = '<b> Traits </b>',
+                                  font = list(color = "navy"),
+                                  xanchor = 'center',
+                                  yanchor = 'top')))
           
  coat
  
@@ -131,12 +149,22 @@ weight <- weight_f %>%
           type = "scatter",
           mode = "markers",
           color = ~Breed,
-          colors = "Spectral") %>%
+          colors = "Paired",
+          size = 22,
+          alpha = 1) %>%
 layout(title = 'Breed vs. Weight',
-       plot_bgcolor = "#bababa",
-       xaxis = list(title = 'Low Weight (lbs)'),
-       yaxis = list(title = 'High Weight (lbs)'),
-       legend = list(title = list(text = '<b> Breeds </b>')))
+         font = list(color = "navy"),
+       plot_bgcolor = "white",
+       paper_bgcolor = "lightcyan",
+       xaxis = list(title = 'Low Weight Range',
+                    tickangle = -45,
+                    color = "navy"),
+       yaxis = list(title = 'High Weight Range',
+                    color = "navy"),
+       legend = list(title = list(text = '<b> Breed </b>',
+                                  font = list(color = "navy"),
+                                  xanchor = 'center',
+                                  yanchor = 'top')))
 
 weight
 
@@ -149,7 +177,7 @@ weight
 ```{r}
 trait_filter <- long %>%
   filter(Breed %in% c("Black and Tan Coonhounds","English Foxhounds","Pointers (German Shorthaired)","Greyhounds","Retrievers (Labrador)","Pharaoh Hounds","Redbone Coonhounds","Rhodesian Ridgebacks","Vizslas")) %>%
-  filter(Traits %in% c("Trainability Level","Adaptability Level"))
+  filter(Traits %in% c("Trainability Level","Adaptability Level","Good With Other Dogs","Affectionate With Family"))
 
 View(trait_filter)
 
@@ -162,7 +190,22 @@ final <- trait_filter %>%
           y = ~Values,
           type = "bar",
           mode = "markers",
-          color = ~Breed)
+          color = ~Breed,
+          colors = "Dark2") %>%
+  layout(title = 'Vizsla vs. Greyhounds',
+         font = list(color = "darkred"),
+       plot_bgcolor = "white",
+       paper_bgcolor = "bisque",
+       xaxis = list(title = 'Traits',
+                    tickangle = -45,
+                    color = "darkred"),
+       yaxis = list(title = 'Rank',
+                    color = "darkred"),
+       legend = list(title = list(text = '<b> Breed </b>',
+              font = list(color = "darkred"),
+                      xanchor = 'center',
+                      yanchor = 'top')))
+
 
 final
 
@@ -171,9 +214,12 @@ final
 
 ## Image of The Winner ##
 ```{r, Winner}
-Vizsla <- image_read("https://images.ctfassets.net/m5ehn3s5t7ec/wp-image-198422/0e0fe308ed17ab3af5f3c8f2db288667/Vizsla-Dog-Breed-Information.jpg")
+Vizsla <- image_read("https://images.ctfassets.net/m5ehn3s5t7ec/wp-image-198422/0e0fe308ed17ab3af5f3c8f2db288667/Vizsla-Dog-Breed-Information.jpg") 
 
-Vizsla
+image_border(Vizsla, color = "peachpuff", geometry = "8x10") %>%
+image_annotate("Vizsla", font = 'Palatino',size = 50, gravity = "southwest", color = "black", boxcolor = "peachpuff")
+
+
 
 
 ```
