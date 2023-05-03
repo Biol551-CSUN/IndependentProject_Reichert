@@ -1,7 +1,7 @@
 ---
-title: "Independent Project"
+title: "How To Choose A Dog Based On Your Lifestyle"
 author: "Leah Reichert"
-date: "'r Sys. Date()'"
+date: " 11 May 2023"
 output: html_document
 ---
 
@@ -14,6 +14,10 @@ knitr::opts_chunk$set(echo = TRUE,
 
 ## The Purpose of This Independent Project 
 - To help my friend narrow down what dog breed to get.
+
+Consider Your Lifestyle 
+
+Consider Your Expectations 
 
 Character Traits 
 
@@ -33,9 +37,9 @@ library(magick)
 
 ## Read in the Data ## 
 ```{r}
-Breed_Traits_ <- read_csv(here("Data","Breed Traits .csv")) # Load first data set
+Breed_Traits <- read_csv(here("Data","Breed Traits.csv")) # Load first data set
 
-View(Breed_Traits_)
+View(Breed_Traits)
 
 
 AKC_Breed_Info <- read_csv(here("Data","AKC Breed Info.csv")) # Load second data set 
@@ -47,94 +51,104 @@ View(AKC_Breed_Info)
 
 ## Pivot Data Long ## 
 ```{r}
-long <- Breed_Traits_ %>%
- pivot_longer(cols = c(`Affectionate With Family`,`Good With Young Children`, `Good With Other Dogs`, `Shedding Level`, `Coat Grooming Frequency`, `Drooling Level`, `Openness To Strangers`, `Playfulness Level`, `Watchdog/Protective Nature`, `Adaptability Level`, `Trainability Level`, `Energy Level`, `Barking Level`, `Mental Stimulation Needs`),
-              names_to = 'Traits',
-              values_to = 'Values') 
+long <- Breed_Traits %>%
+ pivot_longer(cols = c(`Affectionate With Family`,`Good With Young Children`, `Good With Other Dogs`, `Shedding Level`, `Coat Grooming Frequency`, `Drooling Level`, `Openness To Strangers`, `Playfulness Level`, `Watchdog/Protective Nature`, `Adaptability Level`, `Trainability Level`, `Energy Level`, `Barking Level`, `Mental Stimulation Needs`), # variables in the new column
+              names_to = 'Traits', # new name of the column
+              values_to = 'Values') # name of the column 
 View(long)
 ```
 
 ## Create Bar Plot: Character traits measured by Breed Group ## 
 ```{r}
 
-Traits_long <- long %>%
-  plot_ly(x = ~ `Breed Group`,
+Traits_long <- long %>% # graph with this data 
+  plot_ly(x = ~ `Breed Group`, 
           y = ~ Values,
           color = ~ Traits,
-          type = "bar",
-          marker = list(color = rainbow(nrow(long)))) %>%
-  layout(title = 'Breed vs. Traits',
-         font = list(color = "darkorchid"),
-       plot_bgcolor = "white",
-       paper_bgcolor = "lavender",
-       xaxis = list(title = 'Breed Group',
-                    tickangle = -45,
-                    color = "darkorchid"),
-       yaxis = list(title = 'Rank',
-                    color = "darkorchid"),
-       legend = list(title = list(text = '<b> Traits </b>',
-                                  font = list(color = "darkorchid"),
-                                  xanchor = 'center',
+          type = "bar", # bar graph 
+          marker = list(color = rainbow(nrow(long)))) %>% # bar graph is colored by rainbow
+  layout(title = 'Breed vs. Traits', # add a title 
+         xanchor = 'center', # center the title 
+          yanchor = 'top',
+         font = list(color = "darkorchid"), # change title color 
+       plot_bgcolor = "white", # made background white
+       paper_bgcolor = "lavender", # paper background color
+       xaxis = list(title = 'Breed Group', # label x axis
+                    tickangle = -45, # angle the x axis 
+                    color = "darkorchid", # color x axis
+                      size = 15),# make the x axis smaller 
+       yaxis = list(title = 'Rank', # label y axis 
+                    color = "darkorchid"), # color of y axis title 
+       legend = list(title = list(text = '<b> Traits </b>', # rename legend 
+                        font = list(color = "darkorchid"), # change legend color 
+                                  xanchor = 'center', # center the legend
                                   yanchor = 'top')))
 
 
 
 Traits_long
-
-
-
 ```
-
+# 4 categories picked 
 
 ## Filter Data To Visualize Coat Length ##
 ```{r}
-coat_filtered <- Breed_Traits_ %>%
-  filter(Breed %in% c("Black and Tan Coonhounds ")) %>%
-  filter(`Breed Group` %in% c("Hound","Sporting")) %>%
-  filter(`Coat Type` %in% c("Smooth","Double")) 
+coat_filtered <- Breed_Traits %>%
+  filter(`Breed Group` %in% c("Hound","Sporting")) %>% # filter out breed group
+  filter(`Coat Type` %in% c("Smooth","Double")) %>%# filter out coat preference
+  filter(`Affectionate With Family` >= 3)%>%
+  filter(`Good With Other Dogs` >= 3) %>%
+  filter(`Trainability Level` >=3) %>%
+  filter(`Adaptability Level` >=3) %>%
+  filter(`Coat Length` == "Short")
+  
   
   
   
 View(coat_filtered)
 ```
 
-## Scatter Plot: Coat Type for Certain Breeds ##
-```{r fig.width=15}
-coat <- coat_filtered  %>%
-plot_ly(x = ~ Breed,
-          y = ~ `Coat Type`,
-          type = "scatter",
-        mode = "markers",
-        color = ~ Breed,
-        colors = "Paired",
-        size = 20,
-        alpha = 0.5) %>%
-layout(title = 'Breed vs. Coat',
-         font = list(color = "navy"),
-       plot_bgcolor = "white",
-       paper_bgcolor = "lightcyan",
-       xaxis = list(title = 'Breed Group',
-                    tickangle = -45,
-                    color = "navy"),
-       yaxis = list(title = 'Rank',
-                    color = "navy"),
-       legend = list(title = list(text = '<b> Traits </b>',
-                                  font = list(color = "navy"),
-                                  xanchor = 'center',
-                                  yanchor = 'top')))
-          
- coat
- 
-
+## Table: Coat Type for Certain Breeds ##
+```{r}
+table <- coat_filtered %>%
+plot_ly(
+  type = 'table',
+  columnwidth = c(80),
+  header = list(
+    values = c('<b>Breed</b>','<b>Affectionate With Family</b>','<b>Good With Other Dogs</b>','<b>Adaptability Level</b>','<b>Trainability Level</b>','<b>Coat Type</b>','<b>Coat Length</b>'),
+    line = list(color = '#506784'),
+    fill = list(color = '#119DFF'),
+    align = c('left','center'),
+    font = list(color = 'white', size = 12)
+  ),
+  cells = list(
+    values = rbind(
+      c('Retrievers (Labrador)', 'Beagles', 'Pointers (German Shorthaired)', 'Dachshunds', 'Brittanys','Vizslas','Basset Hounds','Weimaraners','Rhodesian Ridgebacks','Bloodhounds','Whippets','Pointers','Black and Tan Coonhounds
+','Bluetick Coonhounds','Greyhounds','Salukis','Redbone Coonhounds','Treeing Walker Coonhounds','Cirnechi dell’Etna','Pharaoh Hounds','American English Coonhounds','Sloughis','Harriers','American Foxhounds','English Foxhounds'),
+      c(5,3,5,5,3,5,3,5,5,4,5,5,4,3,4,5,5,5,4,5,3,4,5,3,5),
+      c(3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5),
+      c(4,4,3,3,3,4,4,3,5,4,4,5,4,3,3,4,4,3,4,4,3,3,4,3,4),
+      c(5,4,4,3,3,5,4,5,5,3,4,5,3,3,3,5,3,4,3,5,4,3,4,3,4),
+      c("Smooth","Smooth","Smooth","Smooth","Smooth","Smooth","Smooth","Double","Smooth","Smooth","Smooth","Double","Smooth","Smooth","Smooth","Smooth","Smooth","Smooth","Smooth","Smooth","Smooth","Smooth","Double","Smooth","Double"),
+      c("Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short","Short")),
+    line = list(color = '#506784'),
+    fill = list(color = c('#25FEFD', 'white')),
+    align = c('left', 'center'),
+    font = list(color = c('#506784'), size = 12)
+    ))
+table
 ```
+
+
+
+# weight range she chose
 
 ## Filter Data To Visualize Weight ##
 ```{r}
 weight_f <- AKC_Breed_Info %>%
   drop_na() %>%
-  filter(Breed %in% c("Whippet","Vizsla","Rhodesian Ridgeback","Labrador Retriever","German Shorthaired Pointer","Pharaoh Hound","Harrier","English Foxhound","Black And Tan Coonhound","Basset Hound","Beagle","Dachshund","Brittany","Weimarener","Bloodhound","Whippet","Basenji","Pointer","Greyhound","Redbone Coonhound")) %>%
-  filter(weight_low_lbs >= 45) %>%
-  filter(weight_high_lbs <= 100)
+  filter(Breed %in% c("Whippet","Vizsla","Rhodesian Ridgeback","Labrador Retriever","German Shorthaired Pointer","Pharaoh Hound","Harrier","English Foxhound","Black And Tan Coonhound","Basset Hound","Beagle","Dachshund","Brittany","Weimarener","Bloodhound","Whippet","Basenji","Pointer","Greyhound","Redbone Coonhound")) %>% # filter data to be universal 
+  filter(weight_low_lbs >= 45) %>% # look at weights greater than 45 lbs
+  filter(weight_high_lbs <= 100) # weight less than 100 lbs
   
   
 
@@ -143,27 +157,27 @@ View(weight_f)
 
 ## Scatter Plot: Weight for Certain Breeds ##
 ```{r}
-weight <- weight_f %>%
+weight <- weight_f %>% # plot filtered data 
   plot_ly(x = ~ weight_low_lbs,
           y = ~weight_high_lbs,
-          type = "scatter",
+          type = "scatter", # type of data
           mode = "markers",
-          color = ~Breed,
-          colors = "Paired",
-          size = 22,
+          color = ~Breed, # color by
+          colors = "Paired", # color pattern
+          size = 22, # size of dot
           alpha = 1) %>%
-layout(title = 'Breed vs. Weight',
-         font = list(color = "navy"),
-       plot_bgcolor = "white",
-       paper_bgcolor = "lightcyan",
-       xaxis = list(title = 'Low Weight Range',
-                    tickangle = -45,
-                    color = "navy"),
-       yaxis = list(title = 'High Weight Range',
-                    color = "navy"),
-       legend = list(title = list(text = '<b> Breed </b>',
-                                  font = list(color = "navy"),
-                                  xanchor = 'center',
+layout(title = 'Breed vs. Weight', # title of plot
+         font = list(color = "navy"), # title color 
+       plot_bgcolor = "white",# plot color 
+       paper_bgcolor = "lightcyan", # background color 
+       xaxis = list(title = 'Low Weight Range', # x axis title 
+                    tickangle = -45, # angle x axis 
+                    color = "navy"), # color x axis
+       yaxis = list(title = 'High Weight Range', # y axis title 
+                    color = "navy"), # y axis color 
+       legend = list(title = list(text = '<b> Breed </b>', # legend title 
+                                  font = list(color = "navy"), # legend color 
+                                  xanchor = 'center', # center title 
                                   yanchor = 'top')))
 
 weight
@@ -171,39 +185,76 @@ weight
 
 ```
 
+## Filter Data Based on Height ##
+```{r}
+height_f <- weight_f %>%
+  filter(height_low_inches >= 21) %>% 
+  filter(height_high_inches <= 26)
 
-## Filter Data For Adaptability and Trainability ##
+View(height_f)
+  
+```
+
+## Scatter Plot: Weight for Certain Breeds ##
+```{r}
+height <- height_f%>% # plot filtered data 
+  plot_ly(x = ~ height_low_inches,
+          y = ~height_high_inches,
+          type = "scatter", # type of data
+          mode = "markers",
+          color = ~Breed, # color by
+          colors = "Paired", # color pattern
+          size = 22, # size of dot
+          alpha = 1) %>%
+layout(title = 'Breed vs. Height', # title of plot
+         font = list(color = "navy"), # title color 
+       plot_bgcolor = "white",# plot color 
+       paper_bgcolor = "lightcyan", # background color 
+       xaxis = list(title = 'Low Height Range', # x axis title 
+                    tickangle = -45, # angle x axis 
+                    color = "navy"), # color x axis
+       yaxis = list(title = 'High Height Range', # y axis title 
+                    color = "navy"), # y axis color 
+       legend = list(title = list(text = '<b> Breed </b>', # legend title 
+                                  font = list(color = "navy"), # legend color 
+                                  xanchor = 'center', # center title 
+                                  yanchor = 'top')))
+height
+```
+
+
+## Filter Data For 4 Categoires ##
 
 ```{r}
 trait_filter <- long %>%
-  filter(Breed %in% c("Black and Tan Coonhounds","English Foxhounds","Pointers (German Shorthaired)","Greyhounds","Retrievers (Labrador)","Pharaoh Hounds","Redbone Coonhounds","Rhodesian Ridgebacks","Vizslas")) %>%
+  filter(Breed %in% c("English Foxhounds","Retrievers (Labrador)","Pharaoh Hounds","Vizslas")) %>%
   filter(Traits %in% c("Trainability Level","Adaptability Level","Good With Other Dogs","Affectionate With Family"))
 
 View(trait_filter)
 
 ```
 
-## Bar Plot: Final Filtered Breeds by Adaptability and Trainability ##
+## Bar Plot: Final Filtered Breeds by Adaptability, Trainability, Good With Other Dogs, and Affectionate With Family ##
 ```{r}
-final <- trait_filter %>%
+final <- trait_filter %>% # data used
   plot_ly(x = ~ Traits,
           y = ~Values,
-          type = "bar",
+          type = "bar", # type of graph 
           mode = "markers",
-          color = ~Breed,
-          colors = "Dark2") %>%
-  layout(title = 'Vizsla vs. Greyhounds',
-         font = list(color = "darkred"),
-       plot_bgcolor = "white",
-       paper_bgcolor = "bisque",
-       xaxis = list(title = 'Traits',
-                    tickangle = -45,
-                    color = "darkred"),
-       yaxis = list(title = 'Rank',
-                    color = "darkred"),
-       legend = list(title = list(text = '<b> Breed </b>',
-              font = list(color = "darkred"),
-                      xanchor = 'center',
+          color = ~Breed, # color by
+          colors = "Dark2") %>% # color pattern
+  layout(title = 'Vizsla vs. Greyhounds', # plot title
+         font = list(color = "darkred"), # title color 
+       plot_bgcolor = "bisque", # color of plot
+       paper_bgcolor = "bisque", # color of background
+       xaxis = list(title = 'Traits', # x axis title 
+                    tickangle = -45, # angle x axis 
+                    color = "darkred"), # x axis color
+       yaxis = list(title = 'Rank',# y axis title
+                    color = "darkred"), # y axis color
+       legend = list(title = list(text = '<b> Breed </b>', # legend title
+              font = list(color = "darkred"), # legend color
+                      xanchor = 'center', # title centered 
                       yanchor = 'top')))
 
 
@@ -214,15 +265,20 @@ final
 
 ## Image of The Winner ##
 ```{r, Winner}
-Vizsla <- image_read("https://images.ctfassets.net/m5ehn3s5t7ec/wp-image-198422/0e0fe308ed17ab3af5f3c8f2db288667/Vizsla-Dog-Breed-Information.jpg") 
+Vizsla <- image_read("https://images.ctfassets.net/m5ehn3s5t7ec/wp-image-198422/0e0fe308ed17ab3af5f3c8f2db288667/Vizsla-Dog-Breed-Information.jpg") # read in image
 
-image_border(Vizsla, color = "peachpuff", geometry = "8x10") %>%
-image_annotate("Vizsla", font = 'Palatino',size = 50, gravity = "southwest", color = "black", boxcolor = "peachpuff")
-
-
-
+image_border(Vizsla, color = "peachpuff", 
+             geometry = "8x10") %>% # Add a border
+image_annotate("Vizsla", font = 'Palatino',
+               size = 50, 
+               gravity = "southwest",
+               color = "black", 
+               boxcolor = "peachpuff") # add text box 
 
 ```
+
+## References ##
+https://www.akc.org/expert-advice/dog-breeds/what-dog-is-right-for-me/
 
 
 
