@@ -2,7 +2,7 @@
 title: "How To Choose A Dog Based On Your Lifestyle"
 author: "Leah Reichert"
 date: " 11 May 2023"
-output: html_document
+output: rmdformats::material
 ---
 
 ```{r setup, include=FALSE}
@@ -12,19 +12,53 @@ knitr::opts_chunk$set(echo = TRUE,
                       fig.path = "../Output/")
 ```
 
-## The Purpose of This Independent Project 
+
+
+# The Purpose of This Independent Project 
 - To help my friend narrow down what dog breed to get.
 
-Consider Your Lifestyle 
+### **Consider Your Lifestyle**      
+- How active are you?  
+- Do you have children?  
+- Do you have the necessary funds?  
+- Do you have the time to train them?  
+- Are you home for long periods?  
+- What will you do with the dog when your out of town?  
 
-Consider Your Expectations 
+### **Consider Your Expectations**  
+- Do you prefer large or small dogs?  
+- How much time are you willing to spend grooming a dog? Do you have allergies?  
+- Do you have a specific activity you want the dog to do with you?  
+  
 
-Character Traits 
+### **Breed Groups**   
+1. Working - Bred for practical duties like watchdogs and sled dogs. They are intelligent and loyal.  
+2. Herding - Bred to herd livestock and are smart and energetic.  
+3. Hound - Bred for hunting. They are affectionate and strong- willed.  
+4. Sporting - Bred to retrieve game. They have high energy levels.  
+5. Non-Sporting - Dogs who don't fit into any other category.  
+6. Toy - Bred to be companions.  
+7. Terrier - Bred to kill vermin.   
 
-Breed Groups 
+### **Character Traits** 
+1. Adaptability Level   
+2. Affectionate With Family   
+3. Barking Level   
+4. Coat Grooming Frequency   
+5. Drooling Level  
+6. Energy Level   
+7. Good With Other Dogs  
+8. Good With Young Children  
+9. Mental Stimulation Needs  
+10. Openness To Strangers  
+11. Playfulness Level  
+12. Shedding Level  
+13. Trainability Level  
+14. Watchdog/Protective Nature  
 
 
-## Load the Libraries ## 
+
+## **Load the Libraries** ## 
 ```{r}
 library(plotly)
 library(here)
@@ -32,10 +66,11 @@ library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(magick)
+library(rmdformats)
 
 ```
 
-## Read in the Data ## 
+## **Read in the Data** ## 
 ```{r}
 Breed_Traits <- read_csv(here("Data","Breed Traits.csv")) # Load first data set
 
@@ -48,8 +83,9 @@ View(AKC_Breed_Info)
 
 
 ```
+# Breed Groups vs. Traits
 
-## Pivot Data Long ## 
+## **Pivot Data Long** ## 
 ```{r}
 long <- Breed_Traits %>%
  pivot_longer(cols = c(`Affectionate With Family`,`Good With Young Children`, `Good With Other Dogs`, `Shedding Level`, `Coat Grooming Frequency`, `Drooling Level`, `Openness To Strangers`, `Playfulness Level`, `Watchdog/Protective Nature`, `Adaptability Level`, `Trainability Level`, `Energy Level`, `Barking Level`, `Mental Stimulation Needs`), # variables in the new column
@@ -58,8 +94,8 @@ long <- Breed_Traits %>%
 View(long)
 ```
 
-## Create Bar Plot: Character traits measured by Breed Group ## 
-```{r}
+## **Create Bar Plot: Character traits measured by Breed Group** ## 
+```{r, fig.width= 11}
 
 Traits_long <- long %>% # graph with this data 
   plot_ly(x = ~ `Breed Group`, 
@@ -88,9 +124,9 @@ Traits_long <- long %>% # graph with this data
 
 Traits_long
 ```
-# 4 categories picked 
+# Narrow Down By Coat Type and Length
 
-## Filter Data To Visualize Coat Length ##
+## **Filter Data To Visualize Coat Length** ##
 ```{r}
 coat_filtered <- Breed_Traits %>%
   filter(`Breed Group` %in% c("Hound","Sporting")) %>% # filter out breed group
@@ -107,8 +143,8 @@ coat_filtered <- Breed_Traits %>%
 View(coat_filtered)
 ```
 
-## Table: Coat Type for Certain Breeds ##
-```{r}
+## **Table: Coat Type for Certain Breeds** ##
+```{r, fig.width = 11, fig.height= 15}
 table <- coat_filtered %>%
 plot_ly(
   type = 'table',
@@ -138,11 +174,9 @@ plot_ly(
 table
 ```
 
+# Narrow Down By Weight
 
-
-# weight range she chose
-
-## Filter Data To Visualize Weight ##
+## **Filter Data To Visualize Weight** ##
 ```{r}
 weight_f <- AKC_Breed_Info %>%
   drop_na() %>%
@@ -155,8 +189,8 @@ weight_f <- AKC_Breed_Info %>%
 View(weight_f)
 ```
 
-## Scatter Plot: Weight for Certain Breeds ##
-```{r}
+## **Scatter Plot: Weight for Certain Breeds** ##
+```{r, fig.width = 11}
 weight <- weight_f %>% # plot filtered data 
   plot_ly(x = ~ weight_low_lbs,
           y = ~weight_high_lbs,
@@ -184,8 +218,9 @@ weight
 
 
 ```
+# Narrow Down By Height
 
-## Filter Data Based on Height ##
+## **Filter Data Based on Height** ##
 ```{r}
 height_f <- weight_f %>%
   filter(height_low_inches >= 21) %>% 
@@ -195,8 +230,8 @@ View(height_f)
   
 ```
 
-## Scatter Plot: Weight for Certain Breeds ##
-```{r}
+## **Scatter Plot: Weight for Certain Breeds** ##
+```{r, fig.width = 11}
 height <- height_f%>% # plot filtered data 
   plot_ly(x = ~ height_low_inches,
           y = ~height_high_inches,
@@ -221,9 +256,9 @@ layout(title = 'Breed vs. Height', # title of plot
                                   yanchor = 'top')))
 height
 ```
+# One Last Comparison 
 
-
-## Filter Data For 4 Categoires ##
+## **Filter Data For 4 Categories** ##
 
 ```{r}
 trait_filter <- long %>%
@@ -234,8 +269,8 @@ View(trait_filter)
 
 ```
 
-## Bar Plot: Final Filtered Breeds by Adaptability, Trainability, Good With Other Dogs, and Affectionate With Family ##
-```{r}
+## **Bar Plot: Final Filtered Breeds by Adaptability, Trainability, Good With Other Dogs, and Affectionate With Family** ##
+```{r, fig.width = 11}
 final <- trait_filter %>% # data used
   plot_ly(x = ~ Traits,
           y = ~Values,
@@ -262,9 +297,10 @@ final
 
 
 ```
+# Image of The Winner
 
-## Image of The Winner ##
-```{r, Winner}
+## **Image of The Winner** ##
+```{r, Winner, fig.width = 11}
 Vizsla <- image_read("https://images.ctfassets.net/m5ehn3s5t7ec/wp-image-198422/0e0fe308ed17ab3af5f3c8f2db288667/Vizsla-Dog-Breed-Information.jpg") # read in image
 
 image_border(Vizsla, color = "peachpuff", 
@@ -277,8 +313,9 @@ image_annotate("Vizsla", font = 'Palatino',
 
 ```
 
-## References ##
-https://www.akc.org/expert-advice/dog-breeds/what-dog-is-right-for-me/
+## **References** ##
+> https://www.akc.org/expert-advice/dog-breeds/what-dog-is-right-for-me/
+> https://www.masterclass.com/articles/dog-breed-guide
 
 
 
