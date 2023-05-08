@@ -1,5 +1,5 @@
-﻿Breed,Breed Group ,Affectionate With Family,Good With Young Children,Good With Other Dogs,Shedding Level,Coat Grooming Frequency,Drooling Level,Coat Type,Coat Length,Openness To Strangers,Playfulness Level,Watchdog/Protective Nature,Adaptability Level,Trainability Level,Energy Level,Barking Level,Mental Stimulation Needs
-Retrievers(Labrador),Sporting,5,5,5,4,2,2,Double,Short,5,5,3,5,5,5,3,4
+Breed,Breed Group,Affectionate With Family,Good With Young Children,Good With Other Dogs,Shedding Level,Coat Grooming Frequency,Drooling Level,Coat Type,Coat Length,Openness To Strangers,Playfulness Level,Watchdog/Protective Nature,Adaptability Level,Trainability Level,Energy Level,Barking Level,Mental Stimulation Needs
+Retrievers (Labrador),Sporting,5,5,5,4,2,2,Double,Short,5,5,3,5,5,5,3,4
 French Bulldogs,Non-sporting,5,5,4,3,1,3,Smooth,Short,5,5,3,5,4,3,1,3
 German Shepherd Dogs,Herding ,5,5,3,4,2,2,Double,Medium,3,4,5,5,5,5,3,5
 Retrievers (Golden),Sporting,5,5,5,4,2,2,Double,Medium,5,4,3,5,5,3,1,4
@@ -178,7 +178,7 @@ Otterhounds,Hound,5,3,3,2,2,3,Rough,Medium,4,3,3,4,4,3,5,3
 Kuvaszok,Working,5,3,3,3,2,2,Double,Medium,3,3,5,4,5,3,3,3
 Komondorok,Working,5,3,2,1,4,2,Corded,Long,3,3,5,3,4,3,3,3
 Cirnechi dell’Etna,Hound,4,3,4,1,1,1,Smooth,Short,3,4,3,4,4,3,2,3
-Pharaoh Hounds,Hound,5,3,5,3,2,1,Smooth,Short,3,3,3,3,4,4,3,4
+Pharaoh Hounds,Hound,5,3,5,3,2,1,Smooth,Short,3,3,3,3,4,4,3,4
 Dandie Dinmont Terriers,Terrier,4,3,3,2,3,1,Double,Medium,4,3,4,3,4,3,3,3
 Pyrenean Shepherds,Herding ,5,3,3,3,2,2,Smooth,Medium,3,5,5,4,5,5,4,5
 Skye Terriers,Terrier,5,3,3,3,3,1,Double,Long,3,3,3,3,3,3,3,3
@@ -192,5 +192,5 @@ Harriers,Hound ,5,5,5,3,1,2,Double,Short,4,4,3,4,4,4,5,4
 Cesky Terriers,Terrier,4,5,3,2,2,1,Wavy,Medium,4,3,3,4,3,3,3,3
 American Foxhounds,Hound ,3,5,5,3,1,1,Smooth,Short,3,3,3,3,3,4,5,3
 Azawakhs,Hound ,3,3,3,2,2,1,Smooth,Short,1,3,3,3,2,3,1,3
-English Foxhounds,Hound,5,5,5,3,1,2,Double,Short,4,4,3,4,4,4,5,4
+English Foxhounds,Hound,5,5,5,3,1,2,Double,Short,4,4,3,4,4,4,5,4
 Norwegian Lundehunds, Non-sporting,3,3,3,3,2,1,Double,Short,3,3,3,3,3,3,3,3
